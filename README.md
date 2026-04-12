@@ -18,11 +18,15 @@ Run the following to initialize your factory:
 make setup
 ```
 
-This will trigger the **`bin/setup_mac.sh`** which automates:
-1.  Python Virtual Environment initiation.
-2.  `direnv` configuration and `.envrc` verification.
-3.  dbt dependency hardening.
-4.  Local skill certification (`verify_worker.py`).
+This automates Venv creation, `direnv` skeleton provisioning, and dbt dependency checks.
+
+---
+
+## 🎴 Skill Ingestion (Activating Capabilities)
+
+The workforce is pre-mapped to 78 skills. To activate them:
+1.  **External**: Follow the **Upstream Links** in `SOVEREIGN_BLUEPRINT.md` to add them to your MCP/Tooling registry.
+2.  **Internal**: Local scripts in `bin/` are immediately invocable by the **Assembler** and **Refiner**.
 
 ---
 

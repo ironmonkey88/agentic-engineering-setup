@@ -1,13 +1,13 @@
-.PHONY: setup install dev-check check-env report
+# Automatically load environment variables if .env exists
+ifneq ("$(wildcard .env)","")
+	include .env
+	export $(shell sed 's/=.*//' .env)
+endif
 
-# Automatically load the .env environment if available
-include .envrc
-
-# The setup target can be run even if the venv doesn't exist yet
 setup:
-	@echo "Bootstrapping fresh Mac environment..."
+	@echo "🏮 Bootstrapping Sovereign Factory..."
 	bash bin/setup_mac.sh
-	@echo "Setup complete. Run 'direnv allow' to activate."
+	@echo "✅ Setup complete."
 
 install:
 	@echo "Installing python dependencies..."
@@ -15,20 +15,16 @@ install:
 	pip install -r requirements.txt
 
 dev-check:
-	@echo "Auditing environment variables & tool versions..."
-	@dbt --version
-	@dlt --version
-	@gcloud --version | head -n 1
-	@dolt version
-	@terraform version | head -n 1
-	@duckdb --version | head -n 1
-
-report:
-	@echo "Generating Dolt Beads Report..."
-	@cd beads && dolt sql -q "SELECT RPAD(id, 8, ' ') AS ID, RPAD(status, 11, ' ') AS Status, title AS Task_Description FROM tasks ORDER BY id;"
+	@echo "🛡️  Auditing Environment Sovereignty..."
+	@command -v dbt >/dev/null 2>&1 && dbt --version || echo "⚠️  dbt missing"
+	@command -v duckdb >/dev/null 2>&1 && duckdb --version | head -n 1 || echo "⚠️  duckdb missing"
+	@command -v terraform >/dev/null 2>&1 && terraform version | head -n 1 || echo "⚠️  terraform missing"
+	@command -v gcloud >/dev/null 2>&1 && gcloud --version | head -n 1 || echo "⚠️  gcloud missing"
 
 ship:
+	@echo "🚢 Launching Release Pulse..."
 	@./bin/release_pulse.sh
 
 portal-ship:
+	@echo "🏮 Launching Selective UI Release..."
 	@SKIP_EVIDENCE=true ./bin/release_pulse.sh
