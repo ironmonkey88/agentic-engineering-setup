@@ -32,5 +32,11 @@ if [ -f "bin/verify_worker.py" ]; then
     .venv/bin/python3 bin/verify_worker.py
 fi
 
+# 4. Beads Certification (Task Memory)
+if ! command -v bd &> /dev/null; then
+    echo "🦨 Beads CLI (bd) missing. Installing Sovereign Task Memory..."
+    curl -fsSL https://raw.githubusercontent.com/steveyegge/beads/main/scripts/install.sh | bash
+fi
+
 echo "✅ Genesis Setup Complete. Welcome to the Pulse."
 echo "🔗 Access your Master Protocol at: SOVEREIGN_BLUEPRINT.md"
