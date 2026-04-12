@@ -1,0 +1,21 @@
+# 🏮 Sovereign Factory Secrets Template
+export PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"
+
+# 1. Cloud Gateway (GCP)
+export GOOGLE_APPLICATION_CREDENTIALS=""
+export GCP_PROJECT_ID=""
+export GCS_BUCKET_NAME=""
+
+# 2. Genetic Keys (AI & GitHub)
+export GH_TOKEN=""
+export ANTHROPIC_API_KEY=""
+export GOOGLE_API_KEY=""
+
+# 3. Warehouse Secrets (DuckDB/MotherDuck)
+export MOTHERDUCK_TOKEN=""
+export DBT_PROFILES_DIR="./transformation/dbt"
+
+# 4. Release Handshake
+export FIREBASE_TOKEN=""
+
+echo "🏮 Sovereign Environment Active."
