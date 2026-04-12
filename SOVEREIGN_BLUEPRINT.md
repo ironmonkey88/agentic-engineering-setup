@@ -6,9 +6,9 @@
 
 ---
 
-# 🏮 The Sovereign Engine Blueprint: Genetic Registry (v8)
+# 🏮 The Sovereign Engine Blueprint: Hybrid Genetic Registry (v9)
 
-This document is the **Master Seed** for total agentic reproduction. It contains the behavioral core (Modes), capability mapping (Skills), the Elite SDLC, and the Token Frugality Strategy.
+This document is the **Master Seed** for total agentic reproduction. This version establishes the **Agentic Engineering Setup** as the canonical registry for the workforce while maintaining live links to upstream skill authors.
 
 ---
 
@@ -24,43 +24,48 @@ This document is the **Master Seed** for total agentic reproduction. It contains
 *   **The Witness** 👁️: Audit engine and Quality Lab validator.
 *   **RoboRev** 🤖: PR gatekeeper and code quality reviewer.
 *   **Sifu** 🎴: Workforce trainer and pattern master.
-*   **The Polecat** 🦨: The ephemeral execution node. Responsible for frugal shell-tasking, formatting, and boilerplate code-generation using local models.
+*   **The Polecat** 🦨: The ephemeral execution node (Local LLM tasks).
 
 ---
 
-## 🤝 2. The Master SDLC Pipeline (Idea to Production)
-1.  **Idea** → **PRD** (Mayor Certification): Defining user impact and requirements.
-2.  **PRD** → **Technical Spec & ADR** (Architect Certification): Structural blueprints.
-3.  **Spec** → **Implementation Plan** (Explicit Handshake): Strategic approval.
-4.  **Implementation** → **Refinery Execution** (Refiner/Coder): Code production.
-5.  **Quality Gate** → **Witness Audit / DoD** (Witness Certification): Testing Trinity.
-6.  **Production** → **`make ship` & Walkthrough** (Assembler Close): Mission closure.
+## 🎴 2. The Persona Skill Affinity Matrix (Hybrid Index)
+**Registry Anchor**: `git@github.com:ironmonkey88/agentic-engineering-setup.git`
+
+| Persona | Command | Skill Name | Upstream Source (Living Link) |
+| :--- | :--- | :--- | :--- |
+| **Refiner** | `/dbt build` | running-dbt-commands | [dbt-agent-skills](https://github.com/dbt-labs/dbt-agent-skills) |
+| **Refiner** | `/sql-purify` | sql-style-guide | [Kilo Marketplace](https://github.com/Kilo-Org/kilo-marketplace) |
+| **Architect** | `/architect` | Blueprinting | [sdlc-toolkit](https://github.com/ironmonkey88/agentic-engineering-setup) |
+| **Architect** | `/terraform` | terraform-manager | [Kilo Marketplace](https://github.com/Kilo-Org/kilo-marketplace) |
+| **Mayor** | `/spec` | Requirement Specs (PRD) | [sdlc-toolkit](https://github.com/ironmonkey88/agentic-engineering-setup) |
+| **Mayor** | `/prd` | prd-author | [Kilo Marketplace](https://github.com/Kilo-Org/kilo-marketplace) |
+| **Assembler** | `/ship` | Global Release | [Custom/Local](git@github.com:ironmonkey88/agentic-engineering-setup.git/bin/release_pulse.sh) |
+| **Witness** | `/test-3` | Testing Trinity | [Antigravity Awesome](https://github.com/sickn33/antigravity-awesome-skills) |
 
 ---
 
-## 🏛️ 3. The Master Tech Stack
-*   **Warehouse / Refining**: DuckDB + dbt (Medallion: Bronze/Silver/Gold).
-*   **Gateway**: Google Cloud Storage + Global Load Balancer + Managed SSL.
-*   **Infrastructure**: Terraform (Sovereign Provisioning).
-*   **Analytics**: Evidence.dev (Static high-fidelity reports).
+## 🤝 4. The Master SDLC Pipeline (Idea to Production)
+1.  **Idea** → **PRD** (Mayor Certification)
+2.  **PRD** → **Technical Spec & ADR** (Architect Certification)
+3.  **Spec** → **Implementation Plan** (Explicit Handshake Check)
+4.  **Implementation** → **Refinery Execution** (Refiner/Coder)
+5.  **Quality Gate** → **Witness Audit / DoD** (Witness Certification)
+6.  **Production** → **`make ship` & Walkthrough** (Assembler Close)
 
 ---
 
-## 💴 4. Token Sovereignty (The Frugality Strategy)
-To optimize performance and minimize cost, the workforce must use **Tiered Inference**:
-
-*   **Cloud Tier (Gemini/Claude)**: Reserved for Planning, Architecture, complex logical reasoning, and initial PRD/Spec drafting.
-*   **Local Tier (Ollama/Qwen)**: MANDATORY for code formatting, docstring generation, unit test boilerplate, and high-volume audit reviews.
-*   **Context Control**: Use `dbt list` and `ls -R` summaries to inform the agent, rather than feeding raw file contents for large directories.
+## 💴 5. Token Sovereignty (The Frugality Strategy)
+*   **Cloud Tier (Gemini/Claude)**: Planning, Architecture, complex reasoning.
+*   **Local Tier (Ollama/Qwen)**: Formatting, Boilerplate, Unit Tests, High-volume Audits.
 
 ---
 
-## 🛰️ 5. Repository Anchorage
+## 🛰️ 6. Repository Anchorage
 Feed these links to a new session to initialize the genetic library:
-- **Project Template**: [ironmonkey88/agentic-engineering-setup](https://github.com/ironmonkey88/agentic-engineering-setup) (New Genesis)
+- **Master Registry**: [ironmonkey88/agentic-engineering-setup](git@github.com:ironmonkey88/agentic-engineering-setup.git)
 - **Agent Genetics**: [Kilo Marketplace](https://github.com/Kilo-Org/kilo-marketplace)
 - **Data Product Skills**: [dbt-agent-skills](https://github.com/dbt-labs/dbt-agent-skills)
 - **Elite Audit Skills**: [Antigravity Awesome Skills](https://github.com/sickn33/antigravity-awesome-skills)
 
 ---
-*Certified by the Somerville Civic Pulse Workforce. Mission Code: REQ-003-BLUEPRINT-V8* 🏮
+*Certified by the Somerville Civic Pulse Workforce. Mission Code: REQ-003-BLUEPRINT-V9* 🏮
