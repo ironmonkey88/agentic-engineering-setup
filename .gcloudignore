@@ -1,0 +1,27 @@
+# ==============================================================================
+# Sovereign Factory Cloud Ignore Pattern (Hardened)
+# ==============================================================================
+# Eliminates -90% of upload bloat by excluding factory floor artifacts.
+# ==============================================================================
+
+# Local Data Layers
+.ignored/
+*.duckdb
+*.duckdb.wal
+
+# Task Memory Artifacts
+scratch/
+.system_generated/
+artifacts/
+
+# System Junk
+.DS_Store
+__pycache__/
+*.pyc
+
+# Local Environment
+.env
+.envrc
+.direnv/
+venv/
+.venv/

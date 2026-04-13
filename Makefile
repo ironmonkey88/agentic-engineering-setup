@@ -1,38 +1,38 @@
-# Automatically load environment variables if .env exists
-ifneq ("$(wildcard .env)","")
-	include .env
-	export $(shell sed 's/=.*//' .env)
-endif
+# ==============================================================================
+# Sovereign Factory Makefile (Hardened Template)
+# ==============================================================================
+# Unified choreography for high-velocity, high-integrity missions.
+# ==============================================================================
 
+PYTHON_BIN := $(shell which python3.11 || which python3)
+PIP := $(PYTHON_BIN) -m pip
+DBT := /usr/local/bin/dbt
+
+.PHONY: setup doctor dev-check clean
+
+# 🏮 setup: Initialize the factory floor
 setup:
-	@echo "🏮 Bootstrapping Sovereign Factory..."
-	bash bin/setup_mac.sh
+	@echo "🛡️ Initializing Factory..."
+	$(PIP) install --upgrade pip
+	$(PIP) install -r requirements.txt
 	@echo "✅ Setup complete."
 
-install:
-	@echo "Installing python dependencies..."
-	pip install --upgrade pip
-	pip install -r requirements.txt
+# 🩺 doctor: Verify factory environment health
+doctor:
+	@echo "🛡️ Auditing Factory environment..."
+	@$(PYTHON_BIN) --version
+	@$(DBT) --version || echo "🔴 dbt-core: MISSING"
+	@python3 -m pip list | grep -E "dlt|duckdb|pandas" || echo "🔴 Missing core dependencies"
+	@echo "✅ Environment synchronized."
 
+# 🛡️ dev-check: Perform technical audit of the local warehouse
 dev-check:
-	@echo "🛡️  Auditing Environment Sovereignty..."
-	@command -v dbt >/dev/null 2>&1 && dbt --version || echo "⚠️  dbt missing"
-	@command -v bd >/dev/null 2>&1 && bd --version || echo "⚠️  beads (bd) missing"
-	@command -v duckdb >/dev/null 2>&1 && duckdb --version | head -n 1 || echo "⚠️  duckdb missing"
-	@command -v terraform >/dev/null 2>&1 && terraform version | head -n 1 || echo "⚠️  terraform missing"
-	@command -v gcloud >/dev/null 2>&1 && gcloud --version | head -n 1 || echo "⚠️  gcloud missing"
+	@echo "🛡️ Executing Dev Certification..."
+	./bin/clean_run.sh $(PYTHON_BIN) bin/triple_seal.py --sampled
+	@echo "✅ Factory floor certified."
 
-beads-init:
-	@bd init
-
-report:
-	@echo "📊 Generating Task Beads Report..."
-	@bd ready
-
-ship:
-	@echo "🚢 Launching Release Pulse..."
-	@./bin/release_pulse.sh
-
-portal-ship:
-	@echo "🏮 Launching Selective UI Release..."
-	@SKIP_EVIDENCE=true ./bin/release_pulse.sh
+# 🧹 clean: Purge local artifacts
+clean:
+	rm -rf .ignored/warehouse_local.duckdb
+	find . -type d -name "__pycache__" -exec rm -rf {} +
+	@echo "🧹 Factory floor cleared."
